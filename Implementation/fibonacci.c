@@ -136,4 +136,37 @@ ull *fibonacci_r_full(int n, ull *ops)
     
     return series;
 }
+/**
+ * Iteratively computes the Fibonacci series.
+ * 
+ * @param n - generate series 
+ * @param ops - operation counter
+ * @return pointer to array 
+ */
+ull *fibonacci_iterative(int n, ull *ops)
+{
+    // Allocate memory 
+    ull *series = malloc(sizeof(ull) * n);
+    
+    // Initialize first fibonacci number: F(1) = 1
+    if (n >= 1)
+    {
+        series[0] = 1;
+    }
+    
+    // Initialize second fibonacci number: F(2) = 1
+    if (n >= 2)
+    {
+        series[1] = 1;
+    }
+    
+    // Remaining series
+    for (int i = 2; i < n; i++)
+    {
+        (*ops)++;  // Count each addition operation
+        series[i] = series[i - 1] + series[i - 2];
+    }
+    
+    return series;
+}
 
