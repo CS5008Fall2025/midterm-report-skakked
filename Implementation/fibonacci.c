@@ -93,4 +93,47 @@ ull *fibonacci_dp_full(int n, ull *ops)
     
     return series;
 }
+/**
+ * Recursion (no dynamic programming).
+ * 
+ * @param n - nth fibonacci number
+ * @param ops - operation counter
+ * @return nth fibonacci number
+ */
+ull fibonacci_r(int n, ull *ops)
+{
+    // Base case: F(0) = 0, F(1) = 1
+    if (n <= 1)
+    {
+        return n;
+    }
+
+    // Operation Counter +1
+    (*ops)++;
+    
+    // Recursive calls
+    return fibonacci_r(n - 1, ops) + fibonacci_r(n - 2, ops);
+}
+
+/**
+ * Generates the complete Fibonacci series from F(1) to F(n)
+ * 
+ * 
+ * @param n - generate series up to the nth fibonacci number
+ * @param ops - pointer to operation counter
+ * @return pointer to array
+ */
+ull *fibonacci_r_full(int n, ull *ops)
+{
+    // Allocate memory
+    ull *series = malloc(sizeof(ull) * n);
+    
+    // Generate sequence
+    for (int i = 1; i <= n; i++)
+    {
+        series[i - 1] = fibonacci_r(i, ops);
+    }
+    
+    return series;
+}
 
