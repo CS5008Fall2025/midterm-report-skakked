@@ -244,10 +244,16 @@ Rumtime Comparisions
 **Recursion: C vs Python**
 Both C and Python implementations of the recursive Fibonacci algorithm exhibit clear exponential runtime growth, though their performance trajectories diverge substantially as input size increases. Initially, both languages handle small values with really fast execution times, but Python's performance begins deteriorating noticeably around n=15, surpassing one second by n=25 and exceeding the 60-second timeout threshold at n=30. The C implementation, by contrast, maintains sub-millisecond performance through n=24, only becoming measurable at n=25 (1ms) and gradually increasing to 34 seconds by n=47. See graph ![Recursive Runtime](https://github.com/CS5008Fall2025/midterm-report-skakked/blob/main/Implementation/Graphs/Recursion.png)
 
-**Dynamic Programming & Iterative: C vs Python**
+**Dynamic Programming: C vs Python**
+The dynamic programming implementation exhibits linear growth in both languages, with Python reaching 2.5 milliseconds at n=1,000—slightly slower than iterative due to memoization overhead. C executes in sub-100-microsecond range, demonstrating an 8-12× speedup over Python. Both implementations maintain the same O(n) scaling pattern, confirming that memoization successfully transforms exponential recursion into linear time complexity.
+![Dynamic Programming Runtime](https://github.com/CS5008Fall2025/midterm-report-skakked/blob/main/Implementation/Graphs/Dynamic%20Programming.png)
+
+**Iterative: C vs Python**
+The iterative implementation shows clear linear growth in both languages, with Python reaching 1.5 milliseconds at n=1,000 while C remains nearly flat at this scale, executing in single-digit microseconds. This confirms the measured 10-13× performance advantage of C over Python. Both implementations scale linearly as expected, with runtime directly proportional to input size across the entire tested range.
+![Iterative Runtime](https://github.com/CS5008Fall2025/midterm-report-skakked/blob/main/Implementation/Graphs/Iteration.png) 
 
 
-
+---
 
 ## Language Analysis
 
