@@ -69,6 +69,54 @@ END FUNCTION
 - No recursion or dynamic structures.  
 - `S(n) = O(1)`.
 
+**Recursive Algorithm**
+> The recursive approach directly implements the mathematical definition of Fibonacci numbers using function calls.
+> Each call branches into two more calls, creating an exponential recursion tree with redundancy.
+
+Pseudocode:
+```
+FUNCTION fibonacci_recursive(n):
+IF n ≤ 1:
+RETURN n
+RETURN fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+```
+**Big-O Analysis**
+
+**Time Complexity:** `O(2ⁿ)` – Exponential  
+
+Recurrence:
+T(n) = T(n-1) + T(n-2) + O(1)
+T(0) = T(1) = O(1)
+
+markdown
+Copy code
+
+Characteristic Equation:
+1. `T(n)=rⁿ`  
+2. `rⁿ = rⁿ⁻¹ + rⁿ⁻² ⇒ r² = r + 1`  
+3. `r = (1 ± √5)/2 ⇒ φ ≈ 1.618`  
+
+Hence `T(n)=O(φⁿ)≈O(1.618ⁿ)≈O(2ⁿ)`.
+
+**Recursion Tree Example**
+fib(5)
+├─ fib(4)
+│ ├─ fib(3)
+│ └─ fib(2)
+└─ fib(3)
+├─ fib(2)
+└─ fib(1)
+
+markdown
+Copy code
+- Height ≈ n  
+- Total nodes ≈ `2⁰ + 2¹ + … + 2ⁿ ≈ 2ⁿ⁺¹−1`  
+→ `T(n)=O(2ⁿ)`
+
+**Space Complexity:** `O(n)`  
+- Max recursion depth = n → `S(n)=O(n)`.
+
+---
 
 
 
