@@ -27,7 +27,12 @@ This project explores the time and operation complexity of computing Fibonacci n
 3. **Dynamic Programming (DP)** — implemented with memoization in Python and tabulation in C.
 
 Each algorithm was implemented in **C** and **Python**.
-The goal is to empirically verify the theoretical Big-O complexity of each method and compare language-level efficiencies. For each algorithm, this report provides: (1) Big-O analysis with derivation, (2) pseudocode, (3) implementation details in both languages, and (4) empirical results.
+The goal is to empirically verify the theoretical Big-O complexity of each method and compare language-level efficiencies. For each algorithm, this report provides: 
+
+1. Big-O analysis with derivation 
+2. Pseudocode 
+3. Implementation details in both languages
+4. Empirical results
 
 
 
