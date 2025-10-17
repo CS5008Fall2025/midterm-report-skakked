@@ -156,7 +156,7 @@ END FUNCTION
 ## Empirical Data & Discussion 
 
 **Operations Count Analysis**
-> The empirical data validates the theoretical Big-O analysis. Operation counts were measured by incrementing the counter at recursive or loop entry points. The results prove empriically  that algorithmic complexity is language-independent. See figure 1 and tables below: ![Operations Count by Algorithm for C and Python]()
+> The empirical data validates the theoretical Big-O analysis. Operation counts were measured by incrementing the counter at recursive or loop entry points. The results prove empriically  that algorithmic complexity is language-independent. See figure 1 and tables below: ![Operations Count by Algorithm for C and Python](Implementation/Graphs/Operations Count.png)
 
 
 
