@@ -295,8 +295,13 @@ For me this  midterm validated that algorithm choice dominates language choice, 
 
 ## References
 [1] Wolfram MathWorld. Fibonacci Number. Retrieved October 17, 2025, from https://mathworld.wolfram.com/FibonacciNumber.html
+
 [2] R. Sedgewick and K. Wayne. Algorithms, 4th ed. Addison-Wesley, Boston, MA, 2011.
+
 [3] A. Bhargava. Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People. Manning Publications, Shelter Island, NY, 2016.
+
 [4] A. Levitin. Introduction to the Design and Analysis of Algorithms, 3rd ed. Pearson, Boston, MA, 2012.
+
 [5] GeeksforGeeks. Difference between C and Python. Last Updated July 11, 2025. Retrieved October 17, 2025, from https://www.geeksforgeeks.org/c/difference-between-c-and-python/
+
 [6] Unstop. 20+ Differences Between C and Python Explained With Examples. Retrieved October 17, 2025, from https://unstop.com/blog/difference-between-c-and-python
