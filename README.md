@@ -275,20 +275,23 @@ A comparasion of the languages is as follows:
 | **Type System** | Static, explicit `uint64_t` | Dynamic, arbitrary precision `int` |
 | **Memory Management** | Manual `malloc`/`free` | Automatic garbage collection |
 | **Error Handling** | Return codes, manual validation | Exceptions (not used here) |
-| **Code Length** | ~280 lines | ~175 lines (38% shorter) |
-| **Development Time** | ~4 hours | ~2 hours (50% faster) |
 | **Recursion Limits** | System stack size | Configurable (default 1000) |
-| **Timing Precision** | Millisecond (`clock()`) | Nanosecond (`perf_counter()`) |
 
-> The implementation experience in both languages revealed fundamental trade-offs between performance and development velocity. C demanded explicit management of every resource manual memory allocation with `malloc()` and `free()`, static type declarations, and careful pointer arithmetic—resulting in 280 lines developed over 4 hours with frequent debugging of segmentation faults and memory leaks. Python, by contrast, felt natural and intuitive as my working language, with automatic memory management, the `@lru_cache` decorator replacing 20+ lines of manual memoization code, and dynamic typing eliminating type-related boilerplate.
-
-> However, this development speed came at a measurable runtime cost. C consistently executed 10-1,000× faster than Python depending on algorithm type, with the performance gap widest for recursive implementations (1,000×) due to Python's function call overhead and narrower for iterative and DP algorithms (10-13×) representing the baseline interpreted versus compiled difference.
-
- > Python's arbitrary precision integers prevented the overflow at n=93 that affected C's 64-bit `uint64_t`, though this flexibility cost 6× more memory per integer (48 bytes versus 8 bytes). 
- 
- > The measured results confirmed that while algorithmic principles like dynamic programming remain identical across languages, execution characteristics differ dramatically: C's compiled native code achieved predictable high performance with fine-grained control, while Python's interpreted bytecode prioritized developer productivity over raw speed—a trade-off.
+> 
 
 ## Conclusions / Reflection
+
+1. Memoization transforms complexity classes: Dynamic programming reduced operations from 1.8 billion (recursive at n=47) to 46 operations—a 99.999997% reduction that converted O(2ⁿ) exponential complexity to O(n) linear. This demonstrates that recognizing and eliminating overlapping subproblems through caching is more valuable than any language optimization, with DP and iterative achieving identical operation counts while both vastly outperforming naive recursion.
+
+2. Exponential complexity is insurmountable: Despite C executing 1,000× faster than Python for recursive calls, this advantage only extended viability from n=30 to n=47—just 17 additional values before both languages hit the exponential wall.
+
+The performance gap between C and Python varied 100-fold by algorithm type: 1,000× for recursive (function call overhead), but only 10-13× for iterative and DP (baseline compiled versus interpreted difference). This revealed that "how" you solve the problem determines "how much" language choice matters.
+
+**Reflection:**
+
+For me this  midterm validated that algorithm choice dominates language choice, theory aligns with practice when measured correctly, and the trade-offs between development velocity and execution performance are quantifiable.
+
+
 
 ## References
 [1]
