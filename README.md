@@ -9,7 +9,7 @@
 
 **The Fibonacci Sequence**
 
-> The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones. The sequence typically starts with F(0) = 0 and F(1) = 1, resulting in: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...
+> The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones. The sequence typically starts with F(0) = 0 and F(1) = 1, resulting in: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...[1]
 
 > Mathematically it is defined as:
 <pre>
@@ -38,7 +38,7 @@ The goal is to empirically verify the theoretical Big-O complexity of each metho
 
 **Iterative Algorithm**
 
-> The iterative algorithm computes Fibonacci numbers bottom-up, maintaining only the last two values.
+> The iterative algorithm computes Fibonacci numbers bottom-up, maintaining only the last two values.[2-4]
 
 Pseudocode:
 ```
@@ -60,12 +60,12 @@ END FUNCTION
 ```
 **Big-O Analysis**
 
-**Time Complexity:** `O(n)`
+**Time Complexity:** `O(n)` [2-4]
 - Executes a single loop from 2 to n.  
 - Each iteration performs constant-time operations (one addition, two assignments).  
 - `T(n) = c₁ + c₂(n-1)` → `O(n)`.
 
-**Space Complexity:** `O(1)`
+**Space Complexity:** `O(1)` [2-4]
 - Maintains only two variables (`a`, `b`).  
 - No recursion or dynamic structures.  
 - `S(n) = O(1)`.
@@ -74,7 +74,7 @@ END FUNCTION
 
 **Recursive Algorithm**
 > The recursive approach directly implements the mathematical definition of Fibonacci numbers using function calls.
-> Each call branches into two more calls, creating an exponential recursion tree with redundancy.
+> Each call branches into two more calls, creating an exponential recursion tree with redundancy. [2-4]
 
 Pseudocode:
 ```
@@ -88,13 +88,13 @@ END FUNCTION
 ```
 **Big-O Analysis**
 
-**Time Complexity:** `O(2ⁿ)` – Exponential  
+**Time Complexity:** `O(2ⁿ)` – Exponential  [2-4]
 Recurrence:
 T(n) = T(n-1) + T(n-2) + O(1)
 T(0) = T(1) = O(1)
 
 
-Characteristic Equation:
+Characteristic Equation: [2-4]
 1. Assume `T(n) = rⁿ`  
 2. Substituting: `rⁿ = rⁿ⁻¹ + rⁿ⁻² ⇒ r² = r + 1`  
 3. Solving `r = (1 ± √5)/2` 
@@ -103,12 +103,12 @@ Characteristic Equation:
 Hence `T(n)= O(φⁿ) ≈ O(1.618ⁿ) ≈ O(2ⁿ)`.
 
 
-**Space Complexity:** `O(n)`  
+**Space Complexity:** `O(n)` [2-4] 
 - Max recursion depth = n → `S(n)= O(n)`.
 
 ---
 **Dynamic Programming**
-> Dynamic programming adds memoization to recursion, caching computed values to avoid redundant calculations.
+> Dynamic programming adds memoization to recursion, caching computed values to avoid redundant calculations. [2-4]
 
 Pseudocode:
 ```
@@ -131,19 +131,19 @@ END FUNCTION
 ```
 **Big-O Analysis**
 
-**Time Complexity:** `O(n)`  
+**Time Complexity:** `O(n)`   [2-4]
 - Each Fibonacci value computed once and stored.  
 - Lookup = `O(1)`.  
 - `T(n) = O(n)`.
 
-**Space Complexity:** `O(n)`  
+**Space Complexity:** `O(n)`   [2-4]
 - Table stores n values.  
 - Recursion stack depth = n.  
 - `S(n) = O(n)`.
 
 ---
 
-## Summary of Complexity Analysis
+## Summary of Complexity Analysis [2-4]
 
 | **Algorithm** | **Time Complexity** | **Space Complexity** | **Notes** |
 |:--------------:|:------------------:|:--------------------:|:-----------|
@@ -269,7 +269,7 @@ Working in Python provided rapid prototyping and readability advantages. Using t
 ### Comparison and Discussion Between Experiences
 
 A comparasion of the languages is as follows: 
-| **Language-Specific Feature** | **C Implementation** | **Python Implementation** |
+| **Language-Specific Feature** [5] | **C Implementation** [5]| **Python Implementation** [5] |
 |-------------------------------|----------------------|----------------------------|
 | **Memoization** | Manual with static arrays | `@lru_cache` decorator |
 | **Type System** | Static, explicit `uint64_t` | Dynamic, arbitrary precision `int` |
@@ -277,7 +277,7 @@ A comparasion of the languages is as follows:
 | **Error Handling** | Return codes, manual validation | Exceptions (not used here) |
 | **Recursion Limits** | System stack size | Configurable (default 1000) |
 
-> Implementing Fibonacci algorithms in both C and Python highlighted how language design influences development experience but not algorithmic complexity. C offered full control over memory and performance, requiring careful debugging and explicit allocation, while Python prioritized readability and rapid iteration through built-in tools like @lru_cache. Although C achieved far higher raw execution speed, both languages produced identical operation growth patterns, reaffirming that efficiency ultimately depends on the algorithm chosen rather than the language used.
+> Implementing Fibonacci algorithms in both C and Python highlighted how language design influences development experience but not algorithmic complexity. C offered full control over memory and performance, requiring careful debugging and explicit allocation, while Python prioritized readability and rapid iteration through built-in tools like @lru_cache.[5-6] Although C achieved far higher raw execution speed, both languages produced identical operation growth patterns, reaffirming that efficiency ultimately depends on the algorithm chosen rather than the language used.
 
 ## Conclusions / Reflection
 
@@ -294,5 +294,9 @@ For me this  midterm validated that algorithm choice dominates language choice, 
 
 
 ## References
-[1]
-[2]
+[1] Wolfram MathWorld. Fibonacci Number. Retrieved October 17, 2025, from https://mathworld.wolfram.com/FibonacciNumber.html
+[2] R. Sedgewick and K. Wayne. Algorithms, 4th ed. Addison-Wesley, Boston, MA, 2011.
+[3] A. Bhargava. Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People. Manning Publications, Shelter Island, NY, 2016.
+[4] A. Levitin. Introduction to the Design and Analysis of Algorithms, 3rd ed. Pearson, Boston, MA, 2012.
+[5] GeeksforGeeks. Difference between C and Python. Last Updated July 11, 2025. Retrieved October 17, 2025, from https://www.geeksforgeeks.org/c/difference-between-c-and-python/
+[6] Unstop. 20+ Differences Between C and Python Explained With Examples. Retrieved October 17, 2025, from https://unstop.com/blog/difference-between-c-and-python
