@@ -88,8 +88,6 @@ Recurrence:
 T(n) = T(n-1) + T(n-2) + O(1)
 T(0) = T(1) = O(1)
 
-markdown
-Copy code
 
 Characteristic Equation:
 1. `T(n)=rⁿ`  
@@ -107,8 +105,6 @@ fib(5)
 ├─ fib(2)
 └─ fib(1)
 
-markdown
-Copy code
 - Height ≈ n  
 - Total nodes ≈ `2⁰ + 2¹ + … + 2ⁿ ≈ 2ⁿ⁺¹−1`  
 → `T(n)=O(2ⁿ)`
