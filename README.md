@@ -9,7 +9,8 @@
 
 ## Overview
 > The Fibonacci Sequence
-> The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones. The sequence > typically starts with F(0) = 0 and F(1) = 1, resulting in: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...
+
+> The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones. The sequence typically starts with F(0) = 0 and F(1) = 1, resulting in: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...
 
 
 ## Empirical Data & Discussion 
