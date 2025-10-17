@@ -36,7 +36,9 @@ The goal is to empirically verify the theoretical Big-O complexity of each metho
 
 
 **Iterative Algorithm**
-The iterative algorithm computes Fibonacci numbers bottom-up, maintaining only the last two values.
+
+> The iterative algorithm computes Fibonacci numbers bottom-up, maintaining only the last two values.
+
 Pseudocode:
 ```
 FUNCTION fibonacci_iterative(n):
