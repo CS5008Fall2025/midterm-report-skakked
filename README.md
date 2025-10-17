@@ -249,7 +249,7 @@ The dynamic programming implementation exhibits linear growth in both languages,
 ![Dynamic Programming Runtime](https://github.com/CS5008Fall2025/midterm-report-skakked/blob/main/Implementation/Graphs/Dynamic%20Programming.png)
 
 **Iterative: C vs Python**
-The iterative implementation shows clear linear growth in both languages, with Python reaching 1.5 milliseconds at n=1,000 while C remains nearly flat at this scale, executing in single-digit microseconds. This confirms the measured 10-13× performance advantage of C over Python. Both implementations scale linearly as expected, with runtime directly proportional to input size across the entire tested range.
+The iterative implementation shows clear linear growth in both languages, with Python reaching 1.5 milliseconds at n=1,000 while C remains nearly flat at this scale, executing in single-digit microseconds. Both implementations scale linearly as expected, with runtime directly proportional to input size across the entire tested range.
 ![Iterative Runtime](https://github.com/CS5008Fall2025/midterm-report-skakked/blob/main/Implementation/Graphs/Iteration.png) 
 
 
