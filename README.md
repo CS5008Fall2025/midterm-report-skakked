@@ -57,27 +57,19 @@ FUNCTION fibonacci_iterative(n):
     RETURN b
 END FUNCTION
 ```
-Big O Analysis
+**Big-O Analysis**
 
-Time Complexity: O(n)
-Derivation:
+**Time Complexity:** `O(n)`
+- Executes a single loop from 2 to n.  
+- Each iteration performs constant-time operations (one addition, two assignments).  
+- `T(n) = c₁ + c₂(n-1)` → `O(n)`.
 
-The algorithm executes a single loop from 2 to n.
+**Space Complexity:** `O(1)`
+- Maintains only two variables (`a`, `b`).  
+- No recursion or dynamic structures.  
+- `S(n) = O(1)`.
 
-Each iteration performs constant-time operations (one addition and two assignments).
 
-Total operations: T(n) = c₁ + c₂(n-1) where c₁ and c₂ are constants.
-
-Dropping constants and lower-order terms: T(n) = O(n).
-
-Space Complexity: O(1)
-Derivation:
-
-Only maintains two variables (a, b) regardless of input size.
-
-No recursion stack or dynamic data structures.
-
-Memory usage is constant: S(n) = O(1).
 
 
 
