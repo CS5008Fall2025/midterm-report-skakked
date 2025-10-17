@@ -79,9 +79,12 @@ END FUNCTION
 Pseudocode:
 ```
 FUNCTION fibonacci_recursive(n):
-IF n ≤ 1:
-RETURN n
-RETURN fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+    IF n ≤ 1:
+        RETURN n
+    
+    operations_count++
+    RETURN fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+END FUNCTION
 ```
 **Big-O Analysis**
 
@@ -105,6 +108,28 @@ Hence `T(n)=O(φⁿ)≈O(1.618ⁿ)≈O(2ⁿ)`.
 
 ---
 **Dynamic Programming**
+> Dynamic programming adds memoization to recursion, caching computed values to avoid redundant calculations.
+
+Pseudocode:
+```
+GLOBAL cache ← empty dictionary/array
+GLOBAL initialized ← boolean array [false, false, ...]
+
+FUNCTION fibonacci_dp(n):
+    IF n ≤ 1:
+        RETURN n
+    
+    IF initialized[n]:
+        RETURN cache[n]  // Return cached value
+    
+    operations_count++
+    cache[n] ← fibonacci_dp(n-1) + fibonacci_dp(n-2)
+    initialized[n] ← true
+    
+    RETURN cache[n]
+END FUNCTION
+```
+
 
 
 
