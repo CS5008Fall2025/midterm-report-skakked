@@ -95,16 +95,16 @@ T(0) = T(1) = O(1)
 
 
 Characteristic Equation:
-1. Assume `T(n)=rⁿ`  
+1. Assume `T(n) = rⁿ`  
 2. Substituting: `rⁿ = rⁿ⁻¹ + rⁿ⁻² ⇒ r² = r + 1`  
 3. Solving `r = (1 ± √5)/2` 
 4. The positive root `φ ≈ 1.618`  
 
-Hence `T(n)=O(φⁿ)≈O(1.618ⁿ)≈O(2ⁿ)`.
+Hence `T(n)= O(φⁿ) ≈ O(1.618ⁿ) ≈ O(2ⁿ)`.
 
 
 **Space Complexity:** `O(n)`  
-- Max recursion depth = n → `S(n)=O(n)`.
+- Max recursion depth = n → `S(n)= O(n)`.
 
 ---
 **Dynamic Programming**
@@ -129,6 +129,30 @@ FUNCTION fibonacci_dp(n):
     RETURN cache[n]
 END FUNCTION
 ```
+**Big-O Analysis**
+
+**Time Complexity:** `O(n)`  
+- Each Fibonacci value computed once and stored.  
+- Lookup = `O(1)`.  
+- `T(n) = O(n)`.
+
+**Space Complexity:** `O(n)`  
+- Table stores n values.  
+- Recursion stack depth = n.  
+- `S(n) = O(n)`.
+
+---
+
+## Summary of Complexity Analysis
+
+| **Algorithm** | **Time Complexity** | **Space Complexity** | **Notes** |
+|:--------------:|:------------------:|:--------------------:|:-----------|
+| **Iterative** | `O(n)` | `O(1)` | Most space-efficient |
+| **Recursive** | `O(2ⁿ)` | `O(n)` | Slowest; exponential growth |
+| **Dynamic Programming** | `O(n)` | `O(n)` | Fast; uses extra memory |
+
+---
+
 
 
 
