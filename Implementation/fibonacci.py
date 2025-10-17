@@ -49,3 +49,25 @@ def fibonacci_dp(n: int) -> int:
     # Recursive call 
     return fibonacci_dp(n - 1) + fibonacci_dp(n - 2)
 
+def fibonacci_r(n: int) -> int:
+    """
+    Solves fibonacci usinge recursion (No dynamic programming).
+    This demonstrates exponential time complexity.
+    
+    Args:
+        n (int): nth fibonacci number (0-indexed)
+
+    Returns:
+         nth fibonacci number
+    """
+    # Base case
+    if n <= 1:
+        return n
+    
+    # operation counter +1
+    global OPS
+    OPS += 1
+    
+    # Recursive call
+    return fibonacci_r(n - 1) + fibonacci_r(n - 2)
+
