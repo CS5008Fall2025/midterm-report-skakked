@@ -18,6 +18,17 @@ F(1) = 1
 F(n) = F(n-1) + F(n-2) for n ≥ 2
 </pre>
 
+> This report analyzes three algorithms (Iterative, Recursive, Dynamic Programming) implemented in two languages (C and Python), resulting in six distinct implementations:
+
+This project explores the time and operation complexity of computing Fibonacci numbers using three classical algorithmic approaches:
+
+1. **Iterative**
+2. **Recursive**
+3. **Dynamic Programming (DP)** — implemented with memoization in Python and tabulation in C.
+
+Each algorithm was implemented in **C** and **Python**.
+The goal is to empirically verify the theoretical Big-O complexity of each method and compare language-level efficiencies. For each algorithm, this report provides: (1) Big-O analysis with derivation, (2) pseudocode, (3) implementation details in both languages, and (4) empirical results.
+
 
 
 

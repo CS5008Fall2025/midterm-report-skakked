@@ -1,5 +1,5 @@
 """
- Fibonacci Series Implementation in C
+ Fibonacci Series Implementation in Python
  Name: Siddharth Kakked
  Date: 14th October 2025
  Implements three algorithms for computing Fibonacci numbers:
