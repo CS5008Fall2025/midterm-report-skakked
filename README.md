@@ -31,20 +31,53 @@ The goal is to empirically verify the theoretical Big-O complexity of each metho
 
 1. Big-O analysis with derivation 
 2. Pseudocode 
-3. Implementation details in both languages
-4. Empirical results
+3. Empirical results
+4. Language Analysis
 
 
 **Iterative Algorithm**
+The iterative algorithm computes Fibonacci numbers bottom-up, maintaining only the last two values.
 Pseudocode:
 ```
-function Fibonacci(n)
-    if n == 0 or n == 1
-        return n
-    else
-        return Fibonacci(n-1) + Fibonacci(n-2)
+FUNCTION fibonacci_iterative(n):
+    IF n ≤ 1:
+        RETURN n
+    
+    a ← 0
+    b ← 1
+    
+    FOR i FROM 2 TO n:
+        operations_count++
+        temp ← b
+        b ← a + b
+        a ← temp
+    
+    RETURN b
+END FUNCTION
 ```
+Big O Analysis
 
+Time Complexity: O(n)
+
+Derivation:
+
+The algorithm executes a single loop from 2 to n
+
+Each iteration performs constant-time operations: one addition and two assignments
+
+Total operations: T(n) = c₁ + c₂(n-1) where c₁ and c₂ are constants
+
+Dropping constants and lower-order terms: T(n) = O(n)
+
+Space Complexity: O(1)
+
+Derivation:
+
+Only maintains two variables (a, b) regardless of input size
+
+No recursion stack or dynamic data structures
+
+Memory usage is constant: S(n) = O(1)
 
 
 
