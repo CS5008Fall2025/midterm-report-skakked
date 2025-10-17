@@ -256,19 +256,37 @@ The iterative implementation shows clear linear growth in both languages, with P
 ---
 
 ## Language Analysis
-
+> I chose python as my language 2 due to my comfort level. I learned Python at Northeastern's Roux Institute and use it daily in my health economics research work, so I'm far more comfortable with it than C. Implementing the same algorithms in my working language let me compare the low-level control required by the class assignments against the high-level abstractions I rely on professionally. Since nearly all HEOR and clinical research workflows use Python, understanding the performance trade-offs of that convenience has direct relevance to decisions I make at work.
 
 
 ### Language 1: C
-
-
+Working in C gave me complete control over memory and execution. I manually managed arrays with malloc() and free(), implemented memoization tables with explicit tracking, and relied on static typing with uint64_t for predictable behavior. The code compiled to native machine instructions that executed in microseconds, but required about 4 hours to develop and debug—dealing with segmentation faults and careful memory management. Integer overflow at n=93 was an unavoidable consequence of 64-bit limits.
 
 ### Language 2: Python
-
+Working in C gave me complete control over memory and execution. I manually managed arrays with malloc() and free(), implemented memoization tables with explicit tracking, and relied on static typing with uint64_t for predictable behavior. The code compiled to native machine instructions that executed in microseconds, but required about 4 hours to develop and debug—dealing with segmentation faults and careful memory management. Integer overflow at n=93 was an unavoidable consequence of 64-bit limits.
 
 
 ### Comparison and Discussion Between Experiences
 
+A comparasion of the languages is as follows: 
+| **Language-Specific Feature** | **C Implementation** | **Python Implementation** |
+|-------------------------------|----------------------|----------------------------|
+| **Memoization** | Manual with static arrays | `@lru_cache` decorator |
+| **Type System** | Static, explicit `uint64_t` | Dynamic, arbitrary precision `int` |
+| **Memory Management** | Manual `malloc`/`free` | Automatic garbage collection |
+| **Error Handling** | Return codes, manual validation | Exceptions (not used here) |
+| **Code Length** | ~280 lines | ~175 lines (38% shorter) |
+| **Development Time** | ~4 hours | ~2 hours (50% faster) |
+| **Recursion Limits** | System stack size | Configurable (default 1000) |
+| **Timing Precision** | Millisecond (`clock()`) | Nanosecond (`perf_counter()`) |
+
+> The implementation experience in both languages revealed fundamental trade-offs between performance and development velocity. C demanded explicit management of every resource manual memory allocation with `malloc()` and `free()`, static type declarations, and careful pointer arithmetic—resulting in 280 lines developed over 4 hours with frequent debugging of segmentation faults and memory leaks. Python, by contrast, felt natural and intuitive as my working language, with automatic memory management, the `@lru_cache` decorator replacing 20+ lines of manual memoization code, and dynamic typing eliminating type-related boilerplate.
+
+> However, this development speed came at a measurable runtime cost. C consistently executed 10-1,000× faster than Python depending on algorithm type, with the performance gap widest for recursive implementations (1,000×) due to Python's function call overhead and narrower for iterative and DP algorithms (10-13×) representing the baseline interpreted versus compiled difference.
+
+ > Python's arbitrary precision integers prevented the overflow at n=93 that affected C's 64-bit `uint64_t`, though this flexibility cost 6× more memory per integer (48 bytes versus 8 bytes). 
+ 
+ > The measured results confirmed that while algorithmic principles like dynamic programming remain identical across languages, execution characteristics differ dramatically: C's compiled native code achieved predictable high performance with fine-grained control, while Python's interpreted bytecode prioritized developer productivity over raw speed—a trade-off.
 
 ## Conclusions / Reflection
 
