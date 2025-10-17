@@ -60,26 +60,24 @@ END FUNCTION
 Big O Analysis
 
 Time Complexity: O(n)
-
 Derivation:
 
-The algorithm executes a single loop from 2 to n
+The algorithm executes a single loop from 2 to n.
 
-Each iteration performs constant-time operations: one addition and two assignments
+Each iteration performs constant-time operations (one addition and two assignments).
 
-Total operations: T(n) = c₁ + c₂(n-1) where c₁ and c₂ are constants
+Total operations: T(n) = c₁ + c₂(n-1) where c₁ and c₂ are constants.
 
-Dropping constants and lower-order terms: T(n) = O(n)
+Dropping constants and lower-order terms: T(n) = O(n).
 
 Space Complexity: O(1)
-
 Derivation:
 
-Only maintains two variables (a, b) regardless of input size
+Only maintains two variables (a, b) regardless of input size.
 
-No recursion stack or dynamic data structures
+No recursion stack or dynamic data structures.
 
-Memory usage is constant: S(n) = O(1)
+Memory usage is constant: S(n) = O(1).
 
 
 
