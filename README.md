@@ -239,6 +239,10 @@ END FUNCTION
 
 > Operation counts are identical between C and Python for each algorithm at all tested n values. This definitively proves that Big-O complexity is a property of the algorithm itself, not the implementation language.
 
+Rumtime Comparisions
+
+Recursion: C vs Python
+Both C and Python implementations of the recursive Fibonacci algorithm exhibit clear exponential runtime growth, though their performance trajectories diverge substantially as input size increases. Initially, both languages handle small values with really fast execution times, but Python's performance begins deteriorating noticeably around n=15, surpassing one second by n=25 and exceeding the 60-second timeout threshold at n=30. The C implementation, by contrast, maintains sub-millisecond performance through n=24, only becoming measurable at n=25 (1ms) and gradually increasing to 34 seconds by n=47. See graph ![Recursive Runtime]()
 
 
 
