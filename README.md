@@ -12,9 +12,14 @@
 > The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones. The sequence typically starts with F(0) = 0 and F(1) = 1, resulting in: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...
 
 > Mathematically it is defined as:
-> F(0) = 0
-> F(1) = 1
-> F(n) = F(n-1) + F(n-2) for n ≥ 2
+<pre>
+F(0) = 0
+F(1) = 1
+F(n) = F(n-1) + F(n-2) for n ≥ 2
+</pre>
+
+
+
 
 
 
