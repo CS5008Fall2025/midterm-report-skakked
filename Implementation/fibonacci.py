@@ -28,3 +28,24 @@ class FibonacciType(Enum):
     DP = 2                      # Dynamic programming only
     RECURSIVE = 1               # Pure recursion only
     ITERATIVE = 0               # Iterative only
+
+@lru_cache(maxsize=None)
+def fibonacci_dp(n: int) -> int:
+    """
+    Solves fibonacci using Dynamic Programming (recursion with memoization).
+    Args:
+        n: nth fibonacci number
+    Returns:
+        nth fibonacci number
+    """
+    # Base case: first two fibonacci numbers
+    if n <= 1:
+        return n
+    
+    # operation counter +1
+    global OPS
+    OPS += 1
+    
+    # Recursive call 
+    return fibonacci_dp(n - 1) + fibonacci_dp(n - 2)
+
