@@ -241,12 +241,16 @@ END FUNCTION
 
 Rumtime Comparisions
 
-Recursion: C vs Python
-Both C and Python implementations of the recursive Fibonacci algorithm exhibit clear exponential runtime growth, though their performance trajectories diverge substantially as input size increases. Initially, both languages handle small values with really fast execution times, but Python's performance begins deteriorating noticeably around n=15, surpassing one second by n=25 and exceeding the 60-second timeout threshold at n=30. The C implementation, by contrast, maintains sub-millisecond performance through n=24, only becoming measurable at n=25 (1ms) and gradually increasing to 34 seconds by n=47. See graph ![Recursive Runtime]()
+**Recursion: C vs Python**
+Both C and Python implementations of the recursive Fibonacci algorithm exhibit clear exponential runtime growth, though their performance trajectories diverge substantially as input size increases. Initially, both languages handle small values with really fast execution times, but Python's performance begins deteriorating noticeably around n=15, surpassing one second by n=25 and exceeding the 60-second timeout threshold at n=30. The C implementation, by contrast, maintains sub-millisecond performance through n=24, only becoming measurable at n=25 (1ms) and gradually increasing to 34 seconds by n=47. See graph ![Recursive Runtime](https://github.com/CS5008Fall2025/midterm-report-skakked/blob/main/Implementation/Graphs/Recursion.png)
+
+**Dynamic Programming & Iterative: C vs Python**
+
 
 
 
 ## Language Analysis
+
 
 
 ### Language 1: C
@@ -263,4 +267,5 @@ Both C and Python implementations of the recursive Fibonacci algorithm exhibit c
 ## Conclusions / Reflection
 
 ## References
-
+[1]
+[2]
