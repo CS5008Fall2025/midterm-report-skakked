@@ -263,7 +263,7 @@ The iterative implementation shows clear linear growth in both languages, with P
 Working in C gave me complete control over memory and execution. I manually managed arrays with malloc() and free(), implemented memoization tables with explicit tracking, and relied on static typing with uint64_t for predictable behavior. The code compiled to native machine instructions that executed in microseconds, but required about 4 hours to develop and debug—dealing with segmentation faults and careful memory management. Integer overflow at n=93 was an unavoidable consequence of 64-bit limits.
 
 ### Language 2: Python
-Working in C gave me complete control over memory and execution. I manually managed arrays with malloc() and free(), implemented memoization tables with explicit tracking, and relied on static typing with uint64_t for predictable behavior. The code compiled to native machine instructions that executed in microseconds, but required about 4 hours to develop and debug—dealing with segmentation faults and careful memory management. Integer overflow at n=93 was an unavoidable consequence of 64-bit limits.
+Working in Python provided rapid prototyping and readability advantages. Using the built-in @lru_cache decorator eliminated manual memory tracking. Debugging and visualization were easier, but function call overhead made execution slower. Development took about two hours, and arbitrary-precision integers avoided overflow entirely.
 
 
 ### Comparison and Discussion Between Experiences
@@ -277,7 +277,7 @@ A comparasion of the languages is as follows:
 | **Error Handling** | Return codes, manual validation | Exceptions (not used here) |
 | **Recursion Limits** | System stack size | Configurable (default 1000) |
 
-> 
+> Implementing Fibonacci algorithms in both C and Python highlighted how language design influences development experience but not algorithmic complexity. C offered full control over memory and performance, requiring careful debugging and explicit allocation, while Python prioritized readability and rapid iteration through built-in tools like @lru_cache. Although C achieved far higher raw execution speed, both languages produced identical operation growth patterns, reaffirming that efficiency ultimately depends on the algorithm chosen rather than the language used.
 
 ## Conclusions / Reflection
 
