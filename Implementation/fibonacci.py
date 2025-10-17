@@ -71,3 +71,20 @@ def fibonacci_r(n: int) -> int:
     # Recursive call
     return fibonacci_r(n - 1) + fibonacci_r(n - 2)
 
+def fibonacci_series_recursive(n: int, func) -> list:
+    """
+    Calls the provided recursive function for each value from 1 to n.
+    
+    Args:
+        n:  nth fibonacci number
+        func: function to use (recursive or dp)
+
+    Returns:
+        list of fibonacci numbers from F(1) to F(n)
+    """
+    result = []
+    # Generate each fibonacci number in sequence
+    for i in range(1, n + 1):
+        result.append(func(i))
+    return result
+
