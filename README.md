@@ -5,8 +5,6 @@
 * **Semester**: Fall 2025
 * **Languages Used**: c, python
 
-> You are free to rename/ modify these sections as you need (and don't forget to remove this line..)
-
 ## Overview
 
 **The Fibonacci Sequence**
